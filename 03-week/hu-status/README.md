@@ -5,17 +5,17 @@
 # Weekly Status - Week 03
 
 <!-- CONFIG-START - must match your profile repo (username/username) CONFIG -->
-- FULL_NAME: Luis Ignacio Bonilla
-- GITHUB_USER:LuisBonilla2260
-- TEAM:OdontoSys
-- SPRINT_GOAL:
+- FULL_NAME: Luis Ignacio Bonilla Delgado
+- GITHUB_USER: LuisBonilla2260
+- TEAM: Di-Lucca
+- SPRINT_GOAL: Define the Analytics bounded context, its event-driven integration, and its independent read model.
 <!-- CONFIG-END -->
 
 ## 1. User stories worked this week
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
-| HU-XXX-001 | Define Clinical and Analytics architecture and data models | done |  |
-| HU-XXX-002 | Define Analytics domain events and projection model | done |  |
+| HU-003-001 | Define Clinical and Analytics architecture and data models | done | [Analytics context and domain commit](https://github.com/code-corhuila/dlc-docs/commit/fd17915082db52668910f742bf69436b3052d970) |
+| HU-003-002 | Define Analytics domain events and projection model | done | [Analytics context and domain commit](https://github.com/code-corhuila/dlc-docs/commit/fd17915082db52668910f742bf69436b3052d970) |
 
 ## 2. My individual contribution
 - Defined and documented the responsibilities and boundaries of the Clinical and Analytics microservices.
@@ -39,7 +39,7 @@
 - Continue preparing the technical documentation required for the next development stage.
 
 ## 5. Compliance self-check
-- [ ] Conventional Commits - `type(scope): summary`
+- [x] Conventional Commits - `type(scope): summary`
 - [ ] Per-environment HU branch + PR to that environment (hu-xxx-dev -> develop, ...)
 - [x] Testable acceptance criteria
 - [ ] Tests added/updated (unit / integration)
@@ -47,4 +47,5 @@
 - [x] No secrets; config via environment variables
 
 ## 6. Evidence links
--
+- [Analytics context and domain commit](https://github.com/code-corhuila/dlc-docs/commit/fd17915082db52668910f742bf69436b3052d970)
+- [Analytics context and domain changes](https://github.com/code-corhuila/dlc-docs/tree/fd17915082db52668910f742bf69436b3052d970)
