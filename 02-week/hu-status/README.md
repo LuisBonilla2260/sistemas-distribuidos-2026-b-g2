@@ -44,3 +44,7 @@
 ## 6. Evidence links
 - [Kanban and Scrum practices document](KANBAN-SCRUM.md)
 - [Kanban-Scrum documentation commit](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/a16a28c6c631288dde36adf6b902ee4541ad9508)
+
+### Supporting visual
+
+![Agile workflow: product backlog, sprint planning, Kanban board, increment, review and retrospective, with flow metrics](../material-apoyo/week-02-agile-workflow.png)
