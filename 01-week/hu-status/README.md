@@ -42,3 +42,7 @@
 ## 6. Evidence links
 - [Session summary image](Resume-SD.png)
 - [Session summary commit](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/d070818132c2ea44727ecb644f7a215d76d2ee3d)
+
+### Supporting visual
+
+![Project scope overview: project definition, patient records, appointment scheduling, clinical care, analytics, and the need-to-solution flow](../material-apoyo/week-01-project-definition.png)
