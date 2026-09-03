@@ -52,3 +52,7 @@
 ## 6. Evidence links
 - [OdontoSys Figma design](https://www.figma.com/design/HB2cfqrV1HFzARClICuitz/OdontoSys?node-id=0-1&t=B9PUkD44i8l2u72o-1)
 - [di-lucca-mvp main branch](https://github.com/DanielPerez1822/di-lucca-mvp/tree/main)
+
+### Supporting visual
+
+![Design and architecture assessment: evidence sources, current monolith stack, proposed service boundaries, risks, and validation roadmap](../material-apoyo/week-04-design-boundary-validation-v2.png)
