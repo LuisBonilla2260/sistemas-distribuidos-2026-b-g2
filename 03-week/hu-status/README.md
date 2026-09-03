@@ -49,3 +49,7 @@
 ## 6. Evidence links
 - [Analytics context and domain commit](https://github.com/code-corhuila/dlc-docs/commit/fd17915082db52668910f742bf69436b3052d970)
 - [Analytics context and domain changes](https://github.com/code-corhuila/dlc-docs/tree/fd17915082db52668910f742bf69436b3052d970)
+
+### Supporting visual
+
+![Event-driven Analytics architecture: independent transactional contexts publish domain events through RabbitMQ to AnalyticsProjection](../material-apoyo/week-03-event-driven-analytics.png)
