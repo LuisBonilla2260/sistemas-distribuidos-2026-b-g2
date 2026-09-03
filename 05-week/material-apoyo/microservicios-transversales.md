@@ -1,54 +1,54 @@
-# Microservicios transversales: guía de apoyo
+# Transversal microservices: support guide
 
-> Estado en la semana 05: este documento es material de estudio y una referencia para decisiones futuras. El MVP de Di-Lucca **no implementa microservicios transversales**; actualmente funciona como un monolito con Angular 20, Spring Boot y PostgreSQL.
+> Week 05 status: this document is study material and a reference for future decisions. The Di-Lucca MVP **does not implement transversal microservices**; it currently operates as a monolith with Angular 20, Spring Boot, and PostgreSQL.
 
-## ¿Qué son?
+## What are they?
 
-Un microservicio transversal atiende una capacidad que puede ser requerida por varios dominios del sistema, sin convertirse en dueño de la lógica de negocio de cada uno. Su objetivo es proporcionar una interfaz clara y reutilizable, conservando la autonomía de los servicios de negocio.
+A transversal microservice addresses a capability that can be required by several system domains without becoming the owner of each domain's business logic. Its purpose is to provide a clear, reusable interface while preserving the autonomy of business services.
 
-Ejemplos frecuentes:
+Common examples include:
 
-- Identidad y acceso: autenticación, autorización y gestión de roles.
-- Notificaciones: envío de correo, SMS o mensajes internos a partir de solicitudes o eventos.
-- Auditoría: registro de acciones relevantes para trazabilidad.
-- Observabilidad: métricas, logs y trazas para operar el sistema.
-- Configuración: parámetros por ambiente y secretos administrados de forma segura.
-- Manejo de errores: convenciones de respuestas, códigos y registro técnico.
+- Identity and access: authentication, authorization, and role management.
+- Notifications: email, SMS, or in-app messages triggered by requests or events.
+- Audit: recording relevant actions for traceability.
+- Observability: metrics, logs, and traces used to operate the system.
+- Configuration: environment parameters and securely managed secrets.
+- Error handling: response, error-code, and technical logging conventions.
 
-No todo código reutilizado debe convertirse en un microservicio. Una utilidad local o una librería compartida puede ser suficiente si no requiere despliegue, datos, escalado o ciclo de vida independiente.
+Not every reusable piece of code should become a microservice. A local utility or shared library can be enough when it does not require independent deployment, data, scaling, or lifecycle management.
 
-## Relación con los dominios de Di-Lucca
+## Relationship with Di-Lucca domains
 
-Los dominios de negocio candidatos del sistema son Pacientes, Citas, Clínica y Facturación. Cada dominio debe conservar sus reglas y sus datos. Una capacidad transversal no debe sustituir esa propiedad.
+The system's candidate business domains are Patients, Appointments, Clinical Care, and Billing. Each domain must retain ownership of its rules and data. A transversal capability must not replace that ownership.
 
 ```text
-Pacientes ─┐
-Citas ─────┼──► interfaz o evento explícito ──► capacidad transversal
-Clínica ───┤                                  (por ejemplo, notificaciones)
-Facturación┘
+Patients ─────┐
+Appointments ─┼──► explicit interface or event ──► transversal capability
+Clinical Care ┤                                  (for example, notifications)
+Billing ──────┘
 ```
 
-La comunicación debe producirse mediante contratos explícitos —API o eventos—, no por acceso directo a la base de datos de otro dominio.
+Communication must use explicit contracts — APIs or events — rather than direct access to another domain's database.
 
-## Riesgos que se deben evitar
+## Risks to avoid
 
-- Crear una “base de datos compartida” para todos los servicios.
-- Concentrar reglas de Pacientes, Citas o Facturación en un servicio transversal.
-- Acoplar los dominios a una implementación concreta de correo, logs o autenticación.
-- Extraer un servicio antes de conocer su propietario, contrato, datos y forma de operación.
+- Creating a shared database for every service.
+- Placing Patients, Appointments, or Billing business rules inside a transversal service.
+- Coupling domains to a concrete email, logging, or authentication implementation.
+- Extracting a service before identifying its owner, contract, data, and operating model.
 
-## Criterio para una futura extracción
+## Criteria for a future extraction
 
-Antes de extraer una capacidad del monolito, el equipo debe poder responder:
+Before extracting a capability from the monolith, the team should answer:
 
-1. ¿Qué necesidad atiende y quién es su dueño técnico?
-2. ¿Qué contrato expone y qué dominios lo consumen?
-3. ¿Qué datos posee y cuáles no debe leer directamente?
-4. ¿Cómo se probará, observará, desplegará y recuperará ante fallos?
-5. ¿Qué valor aporta extraerla frente a mantenerla dentro del MVP?
+1. What need does it address, and who owns it technically?
+2. Which contract does it expose, and which domains consume it?
+3. Which data does it own, and which data must it not read directly?
+4. How will it be tested, observed, deployed, and recovered after a failure?
+5. What value does extraction provide compared with keeping it inside the MVP?
 
-## Prioridad actual del MVP
+## Current MVP priority
 
-En la semana 05 la prioridad es reforzar el monolito existente: preservar las capas `application`, `domain` e `infrastructure`, ampliar pruebas unitarias e integración, y validar los contratos API entre frontend y backend. La extracción de microservicios transversales solo debe evaluarse cuando exista una necesidad real y una frontera validada.
+During Week 05, the priority is to strengthen the existing monolith: preserve the `application`, `domain`, and `infrastructure` layers, expand unit and integration testing, and validate API contracts between frontend and backend. Extracting transversal microservices should only be evaluated when a real need and a validated boundary exist.
 
-![Referencia visual: capacidades transversales como propuesta futura](week-05-mvp-testing-transversal-services.png)
+![Visual reference: transversal capabilities as a future proposal](week-05-mvp-testing-transversal-services.png)
