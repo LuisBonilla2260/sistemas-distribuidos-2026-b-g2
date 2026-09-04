@@ -8,6 +8,8 @@ Testing gives the team rapid feedback while the MVP evolves. The goal is not onl
 
 The backend suite and its QA evidence are available in the [`code-corhuila/di-lucca` QA branch](https://github.com/code-corhuila/di-lucca/tree/qa). The source tests were added in commit [`5fc9fff`](https://github.com/code-corhuila/di-lucca/commit/5fc9fff322e52f96c75a686c9bb2f862186ff415); the detailed [QA report](https://github.com/code-corhuila/di-lucca/blob/qa/HU-03/qa.md) describes the execution results and remaining risks.
 
+![MVP testing overview: test layers, monolith components, QA results, and next focus](week-05-mvp-testing-overview.png)
+
 ## What was tested
 
 ### Backend: application services
