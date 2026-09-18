@@ -14,7 +14,7 @@
 ## 1. User stories worked this week
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
-| HU-006-001 | Document Docker Compose orchestration and environment configuration support for MVP 2 | done | This fork commit (pending commit creation) |
+| HU-006-001 | Document Docker Compose orchestration and environment configuration support for MVP 2 | done | [docs(week-06): add orchestration support](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/9324d7a) |
 
 ## 2. My individual contribution
 - Produced an English technical support package for Docker Compose orchestration, configuration ownership, and environment promotion.
@@ -33,7 +33,7 @@
 - Keep the fork documentation aligned with confirmed project progress and avoid unverified scope commitments.
 
 ## 5. Compliance self-check
-- [ ] Conventional Commits - `type(scope): summary` (pending commit creation)
+- [x] Conventional Commits - `type(scope): summary`
 - [ ] Per-environment HU branch + PR to that environment (hu-xxx-dev -> develop, ...)
 - [x] Testable acceptance criteria
 - [ ] Tests added/updated (unit / integration)
