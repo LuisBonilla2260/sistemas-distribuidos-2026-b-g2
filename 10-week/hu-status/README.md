@@ -8,36 +8,45 @@
 - FULL_NAME: Luis Ignacio Bonilla Delgado
 - GITHUB_USER: LuisBonilla2260
 - TEAM: Di-Lucca
-- SPRINT_GOAL: Deliver the clinical record portal as a composable remote and integrate it into the dlc-front compositor under quality gates, aligned with the dlc-docs contracts.
+- SPRINT_GOAL: Ship MVP 2 - promote the clinical repositories and the dlc-front compositor develop -> qa -> main and tag v2.0.0, with persistence ownership, outbox/idempotency contracts and idempotent clinical writes documented and evidenced.
 <!-- CONFIG-END -->
 
 ## 1. User stories worked this week
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
-| HU-010-001 | Align billing and patient OpenAPI and event contracts in dlc-docs | done | [dlc-docs PR #92](https://github.com/code-corhuila/dlc-docs/pull/92) |
-| HU-010-002 | Clinical record workspace: entries, diagnoses, treatment plan and care closure | done | [dlc-clinical-portal PR #41](https://github.com/code-corhuila/dlc-clinical-portal/pull/41) |
-| HU-010-003 | Expose the clinical portal through composition contract v1 and HTTP adapters | done | [dlc-clinical-portal PR #95](https://github.com/code-corhuila/dlc-clinical-portal/pull/95) |
-| HU-010-004 | Build the dlc-front compositor: registry, lifecycle, shell, session and shared HTTP client | done | [dlc-front PR #69](https://github.com/code-corhuila/dlc-front/pull/69) |
-| HU-010-005 | Quality gates, containerized demo and QA promotion evidence | done | [dlc-front PR #73](https://github.com/code-corhuila/dlc-front/pull/73) |
+| HU-010-001 | Document outbox publication, idempotent consumers and payment concurrency for billing and patients | done | [dlc-docs PR #92](https://github.com/code-corhuila/dlc-docs/pull/92) |
+| HU-010-002 | Version billing and patient event contracts and the billing OpenAPI contract | done | [dlc-docs PR #89](https://github.com/code-corhuila/dlc-docs/pull/89), [PR #90](https://github.com/code-corhuila/dlc-docs/pull/90), [PR #91](https://github.com/code-corhuila/dlc-docs/pull/91) |
+| HU-010-003 | Clinical record workspace with idempotent writes and visible processing/retry states for care closure | done | [dlc-clinical-portal PR #46](https://github.com/code-corhuila/dlc-clinical-portal/pull/46), [PR #51](https://github.com/code-corhuila/dlc-clinical-portal/pull/51) |
+| HU-010-004 | Expose the clinical portal through composition contract v1 and integrate it into the dlc-front compositor | done | [dlc-clinical-portal PR #57](https://github.com/code-corhuila/dlc-clinical-portal/pull/57), [dlc-front PR #69](https://github.com/code-corhuila/dlc-front/pull/69) |
+| HU-010-005 | MVP 2 release: promote develop -> qa -> main, CHANGELOG and tag v2.0.0 for the clinical repositories and dlc-front | done | [dlc-clinical-portal PR #107](https://github.com/code-corhuila/dlc-clinical-portal/pull/107), [dlc-front PR #96](https://github.com/code-corhuila/dlc-front/pull/96) |
 
 ## 2. My individual contribution
-- **dlc-docs:** aligned the billing service OpenAPI contract and added payment, charge, patient and patient-profile event contracts; aligned patients/billing operations and UX documentation (PRs #88–#92).
-- **dlc-clinical-portal:** established the frontend composition structure and quality tooling (lint, format, coverage, PR gates); built the clinical record workspace following the mockup: read-only record states, entry composer, diagnoses linked to a consultation, evolution notes, treatment planning with catalog procedures, start with version guard, amendments preserving history, procedure completion, care-completion declaration with closure follow-up and retry, and a read-only billing estimate in COP.
-- Added a role-scoped clinical analytics dashboard, idempotency/intent keys on every clinical write, a composition contract v1 mount adapter, a versioned entry build per portal release, and HTTP adapters that read and write the clinical record through the compositor.
-- **dlc-front:** implemented the compositor from ADR-011: route resolution (C04), portal registry validation (C01), portal lifecycle (C02), host slots and shell controller, session projection behind an auth port (C05), shared HTTP client and OpenAPI operation catalogue (C06), safe telemetry events (C07), and portal health/recovery watch.
-- Built the common frame and public home from the mockup (responsive), a Docker/nginx deployment with a Prism gateway mock, pinned images and health check, and a portal integration guide for the other portal teams.
-- Remediated a `source-map-js` security advisory and recorded validation evidence; recorded five promotions of dlc-front to QA.
-- No changes were made to dlc-clinical-api or dlc-clinical-db this week (the dlc-clinical-db hardening PR #4 merged on 2026-10-05 belongs to the week 09 work).
+
+### Session 1 - Persistence in distributed systems (saga, outbox, CQRS)
+- **Database per service:** the Clinical context owns its MongoDB logical database `clinical` through Liquibase migrations (dlc-clinical-db, released as v2.0.0); no other service reads it directly.
+- **Outbox and idempotent consumers (design):** documented that Billing and Patients publish committed facts through their own outbox after the local state/outbox transaction commits, and that RabbitMQ at-least-once delivery is handled by consumers with inbox/business-source deduplication, bounded retries and dead-letter queues (dlc-docs PR #92).
+- **Concurrency and idempotency:** added the payment concurrency sequence diagram (idempotency key reservation, version check, payment + outbox in one transaction, `409 IDEMPOTENCY_CONFLICT` on replay) (dlc-docs PR #92).
+- **Versioned event contracts:** `InvoicePaid`, `ManualChargeRecorded`, `PaymentRecorded`, `PatientRegistered`, `PatientProfileUpdated` and `PatientDeactivated` v1 JSON schemas, plus the aligned billing OpenAPI contract (dlc-docs PRs #89-#91).
+- **Idempotent writes from the client:** every clinical write (entries, plan, start, completion, care declaration and closure retry) sends an idempotency/intent key, so a retried request cannot create a duplicate clinical effect (dlc-clinical-portal PRs #46, #51, #91).
+- **Eventual consistency in the UI:** the care-closure flow shows pending/processing states and a retry action instead of assuming instant consistency (dlc-clinical-portal care closure follow-up).
+
+### Session 2 - MVP 2 release
+- **Per-environment promotion:** delivered every change as a feature branch -> `develop`, promoted in batches to `qa` (`promotion/*` PRs) and released to `main` through `release/2.0.0` PRs approved by the instructor.
+- **Tagged and versioned:** `v2.0.0` tags on `main` with a CHANGELOG for dlc-clinical-api, dlc-clinical-db, dlc-clinical-portal and dlc-front.
+- **Integrated system:** the clinical portal mounts inside the dlc-front compositor (registry, lifecycle, shell, session and shared HTTP client) next to the patients, billing and appointments portals; `docker compose` brings up the compositor, the portal remotes and the Prism gateway mock behind health checks.
+- **Quality:** lint, format, coverage, build and PR gates run on the portal and the compositor; security advisory remediated.
+- **Traceability:** all commits and PRs with hashes are recorded in [TRACEABILITY.md](../TRACEABILITY.md).
 
 ## 3. Blockers and risks
-- The clinical portal still runs against the gateway mock (Prism); dlc-clinical-api does not yet implement the clinical endpoints consumed by the HTTP adapters.
-- The session projection relies on an auth port with a preview implementation; real IAM integration is pending.
-- Other portals (patients, appointments, billing) were integrated into dlc-front by their teams near the end of the week; cross-portal navigation needs a joint end-to-end check.
+- **No saga or outbox implemented yet:** the clinical portal runs on synthetic data and the Prism mock; dlc-clinical-api v2.0.0 is a repository baseline with no operations implemented. The outbox/idempotency work this week is contracts and design, not running code.
+- **No failure path demonstrated:** a cross-service flow with an injected failure and a saga compensation could not be shown because the clinical API and broker integration do not exist yet.
+- **No CQRS read model:** the clinical dashboard is a client-side view over demo data, not a projection built from events.
+- dlc-clinical-portal has a follow-up release PR (#110, `2.0.1`) still open.
 
 ## 4. Plan for next week
-- Implement the clinical endpoints in dlc-clinical-api to replace the mock behind the compositor HTTP adapters.
-- Connect the session port to the IAM flow and validate role-scoped access end to end.
-- Run an integrated QA pass of all portals mounted in dlc-front.
+- Implement the first clinical endpoints in dlc-clinical-api with the outbox for one critical event (care completion) and an idempotent consumer.
+- Define the care-completion -> billing saga with its compensation and prove the failure path in a demo.
+- Run the Corte 2 retrospective and turn integration pain (mocked API, contract mismatches) into Corte 3 backlog items: observability, deployment, security and CI/CD.
 
 ## 5. Compliance self-check
 - [x] Conventional Commits - `type(scope): summary`
@@ -50,13 +59,14 @@
 ## 6. Evidence links
 - [Contribution traceability: all commits and PRs with hashes](../TRACEABILITY.md)
 - [Corte 2 release tags](../c2-release/RELEASES.md)
+- [dlc-docs PR #92 - outbox, idempotent consumers and payment concurrency](https://github.com/code-corhuila/dlc-docs/pull/92)
 - [dlc-docs PR #91 - billing OpenAPI contract](https://github.com/code-corhuila/dlc-docs/pull/91)
 - [dlc-docs PR #89 - payment, charge and patient event contracts](https://github.com/code-corhuila/dlc-docs/pull/89)
-- [dlc-clinical-portal PR #38 - clinical analytics dashboard](https://github.com/code-corhuila/dlc-clinical-portal/pull/38)
-- [dlc-clinical-portal PR #57 - composition contract v1 mount adapter](https://github.com/code-corhuila/dlc-clinical-portal/pull/57)
-- [dlc-clinical-portal PR #93 - read clinical record through the compositor HTTP](https://github.com/code-corhuila/dlc-clinical-portal/pull/93)
-- [dlc-clinical-portal security remediation commit](https://github.com/code-corhuila/dlc-clinical-portal/commit/5d74603)
-- [dlc-front PR #68 - C06 shared HTTP client](https://github.com/code-corhuila/dlc-front/pull/68)
-- [dlc-front PR #74 - safe C07 telemetry](https://github.com/code-corhuila/dlc-front/pull/74)
-- [dlc-front PR #75 - Prism gateway mock and API proxy](https://github.com/code-corhuila/dlc-front/pull/75)
-- [dlc-front PR #66 - portal integration guide](https://github.com/code-corhuila/dlc-front/pull/66)
+- [dlc-clinical-portal PR #46 - idempotency keys for clinical writes](https://github.com/code-corhuila/dlc-clinical-portal/pull/46)
+- [dlc-clinical-portal PR #51 - intent keys for care declaration and closure retry](https://github.com/code-corhuila/dlc-clinical-portal/pull/51)
+- [dlc-clinical-portal PR #107 - release 2.0.0 to main](https://github.com/code-corhuila/dlc-clinical-portal/pull/107)
+- [dlc-clinical-db PR #13 - release 2.0.0 to main](https://github.com/code-corhuila/dlc-clinical-db/pull/13)
+- [dlc-clinical-api PR #9 - release 2.0.0 to main](https://github.com/code-corhuila/dlc-clinical-api/pull/9)
+- [dlc-front PR #96 - release 2.0.0 to main](https://github.com/code-corhuila/dlc-front/pull/96)
+- [dlc-clinical-portal v2.0.0 release](https://github.com/code-corhuila/dlc-clinical-portal/releases/tag/v2.0.0)
+- [dlc-front v2.0.0 release](https://github.com/code-corhuila/dlc-front/releases/tag/v2.0.0)
