@@ -48,6 +48,8 @@
 - [x] No secrets; config via environment variables
 
 ## 6. Evidence links
+- [Contribution traceability: all commits and PRs with hashes](../TRACEABILITY.md)
+- [Corte 2 release tags](../c2-release/RELEASES.md)
 - [dlc-docs PR #91 - billing OpenAPI contract](https://github.com/code-corhuila/dlc-docs/pull/91)
 - [dlc-docs PR #89 - payment, charge and patient event contracts](https://github.com/code-corhuila/dlc-docs/pull/89)
 - [dlc-clinical-portal PR #38 - clinical analytics dashboard](https://github.com/code-corhuila/dlc-clinical-portal/pull/38)
