@@ -15,6 +15,7 @@
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
 | HU-008-001 | Align MVP 2 patient ownership, authorization, and traceability documentation | done | [Patient ownership and deactivation rules](https://github.com/code-corhuila/dlc-docs/commit/ff21735) |
+| HU-008-002 | Document deployment, schema evolution and shared API error contracts | done | [dlc-docs PR #16](https://github.com/code-corhuila/dlc-docs/pull/16), [dlc-docs PR #20](https://github.com/code-corhuila/dlc-docs/pull/20) |
 
 ## 2. My individual contribution
 - Consolidated evidence for Patients as a business service and Auth/IAM as a transversal service in the MVP 2 documentation baseline.
@@ -41,6 +42,9 @@
 - [x] No secrets; config via environment variables
 
 ## 6. Evidence links
+- [dlc-docs PR #16 - deployment and schema evolution](https://github.com/code-corhuila/dlc-docs/pull/16)
+- [dlc-docs PR #20 - shared API error contracts](https://github.com/code-corhuila/dlc-docs/pull/20)
+- [Contribution traceability: all commits and PRs with hashes](../../10-week/TRACEABILITY.md)
 - [Product update introducing Patients](https://github.com/code-corhuila/dlc-docs/commit/0ff234a)
 - [Patient ownership and deactivation rules](https://github.com/code-corhuila/dlc-docs/commit/ff21735)
 - [PR #25 merge evidence](https://github.com/code-corhuila/dlc-docs/commit/7a6e093)

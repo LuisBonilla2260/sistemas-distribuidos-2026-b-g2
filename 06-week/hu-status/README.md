@@ -41,6 +41,7 @@
 - [x] No secrets; config via environment variables
 
 ## 6. Evidence links
+- [Contribution traceability: all commits and PRs with hashes](../../10-week/TRACEABILITY.md)
 - [Compose orchestration guide](../orchestration-support/compose-orchestration-guide.md)
 - [Configuration and environment strategy](../orchestration-support/config-environments.md)
 - [MVP 2 orchestration support backlog](../orchestration-support/mvp2-orchestration-backlog.md)

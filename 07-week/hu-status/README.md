@@ -15,6 +15,7 @@
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
 | HU-007-001 | Document inter-service communication and versioned contract support for MVP 2 | done | [Communication](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/572f866), [contracts](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/bab9e3e), and [delivery backlog](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/56fffb5) |
+| HU-007-002 | Add Patients as a business service in the dlc-docs product baseline | done | [dlc-docs PR #6](https://github.com/code-corhuila/dlc-docs/pull/6) |
 
 ## 2. My individual contribution
 - Produced an English support package covering synchronous REST/gRPC calls, asynchronous messaging, delivery semantics, and idempotent consumer design.
@@ -32,7 +33,7 @@
 - Keep documentation aligned with confirmed project evidence and avoid unverified implementation commitments.
 
 ## 5. Compliance self-check
-- [ ] Conventional Commits - `type(scope): summary`
+- [x] Conventional Commits - `type(scope): summary`
 - [ ] Per-environment HU branch + PR to that environment (hu-xxx-dev -> develop, ...)
 - [x] Testable acceptance criteria
 - [ ] Tests added/updated (unit / integration)
@@ -40,6 +41,8 @@
 - [x] No secrets; config via environment variables
 
 ## 6. Evidence links
+- [dlc-docs PR #6 - Patients as a business service](https://github.com/code-corhuila/dlc-docs/pull/6)
+- [Contribution traceability: all commits and PRs with hashes](../../10-week/TRACEABILITY.md)
 - [Communication decisions](../interservice-contracts-support/communication-decisions.md)
 - [Versioned contract standards](../interservice-contracts-support/contract-standards.md)
 - [Delivery semantics and idempotency](../interservice-contracts-support/delivery-idempotency.md)
