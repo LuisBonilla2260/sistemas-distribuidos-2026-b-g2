@@ -41,7 +41,7 @@
 - **No saga or outbox implemented yet:** the clinical portal runs on synthetic data and the Prism mock; dlc-clinical-api v2.0.0 is a repository baseline with no operations implemented. The outbox/idempotency work this week is contracts and design, not running code.
 - **No failure path demonstrated:** a cross-service flow with an injected failure and a saga compensation could not be shown because the clinical API and broker integration do not exist yet.
 - **No CQRS read model:** the clinical dashboard is a client-side view over demo data, not a projection built from events.
-- dlc-clinical-portal has a follow-up release PR (#110, `2.0.1`) still open.
+- dlc-clinical-portal follow-up release `2.0.1` (PR #110) was merged to `main` on 2026-10-14; no release PRs remain open.
 
 ## 4. Plan for next week
 - Implement the first clinical endpoints in dlc-clinical-api with the outbox for one critical event (care completion) and an idempotent consumer.
@@ -65,6 +65,7 @@
 - [dlc-clinical-portal PR #46 - idempotency keys for clinical writes](https://github.com/code-corhuila/dlc-clinical-portal/pull/46)
 - [dlc-clinical-portal PR #51 - intent keys for care declaration and closure retry](https://github.com/code-corhuila/dlc-clinical-portal/pull/51)
 - [dlc-clinical-portal PR #107 - release 2.0.0 to main](https://github.com/code-corhuila/dlc-clinical-portal/pull/107)
+- [dlc-clinical-portal PR #110 - release 2.0.1 to main](https://github.com/code-corhuila/dlc-clinical-portal/pull/110)
 - [dlc-clinical-db PR #13 - release 2.0.0 to main](https://github.com/code-corhuila/dlc-clinical-db/pull/13)
 - [dlc-clinical-api PR #9 - release 2.0.0 to main](https://github.com/code-corhuila/dlc-clinical-api/pull/9)
 - [dlc-front PR #96 - release 2.0.0 to main](https://github.com/code-corhuila/dlc-front/pull/96)
