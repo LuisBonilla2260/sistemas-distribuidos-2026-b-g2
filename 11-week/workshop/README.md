@@ -8,7 +8,7 @@ Individual guided workshop applying week 11 (observability, SLOs and incident re
 - TEAM: Di-Lucca
 - DOCS_REPO: https://github.com/code-corhuila/dlc-docs
 - REFLECTION_DOC: https://docs.google.com/document/d/12v1tSwnaaiHqrNViGnSnMcDoTWZbwZyS7Mg71xwac1g/edit?usp=sharing
-- JOURNEY:
+- JOURNEY: Complete a procedure - POST /api/v1/procedures/{id}/completions (clinical-service -> MongoDB outbox -> RabbitMQ ProcedureCompleted -> appointments-service, billing-service)
 <!-- CONFIG-END -->
 
 ## Deliverables
