@@ -40,6 +40,15 @@
   - **Freshness:** for the future care-completion -> billing event flow, how far behind its consumer may run.
 - Not yet written down as SLOs with windows, error-budget policy, alert or runbook (HU-011-006).
 
+### Workshop delivery 1 (2026-10-19) - journey "complete a procedure"
+Critical journey `POST /api/v1/procedures/{id}/completions` -> MongoDB outbox -> `ProcedureCompleted` -> Appointments and Billing, in [11-week/workshop](../workshop/README.md).
+- **CP0 - setup:** workshop README with CONFIG ([754f938](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/754f938)).
+- **CP1 - journey and trace map:** hop table, Mermaid sequence with `traceparent` per arrow, span tree across the async boundary; aligned with the `dlc-clinical-db` collections ([63ebf81](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/63ebf81), [810d84a](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/810d84a)).
+- **CP2 - log contract:** required and domain fields, never-log list, levels and seven JSON lines of one trace with a publish timeout and a billing rejection ([d267c6a](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/d267c6a), [04b89cc](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/04b89cc)).
+- **CP3 - instrumentation in Go:** `traceparent` middleware, `slog` JSON logger, propagation to the outbox headers and to outgoing HTTP, `/metrics` with a counter and a latency histogram, and a passing test that the trace id is kept downstream ([abed306](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/abed306), [6322a0a](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/6322a0a), [6ed2cb1](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/6ed2cb1)).
+- **CP4 - metric catalog:** golden signals for clinical, appointments and billing with PromQL, label cardinality and latency buckets ([b210632](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/b210632)).
+- HU-011-005 advanced in the workshop module only; `dlc-clinical-api` still has no `/metrics` or `traceparent`.
+
 ## 3. Blockers and risks
 - **CI not executed:** the organization's GitHub Actions account is locked by billing, so `ci.yml` never starts on PRs #10-#13. Quality is only proven by local runs.
 - **Stacked PRs waiting for review:** #11-#13 build on #10. Nothing reaches `develop` until #10 is approved.
