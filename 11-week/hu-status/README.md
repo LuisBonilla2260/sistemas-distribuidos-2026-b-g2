@@ -49,6 +49,13 @@ Critical journey `POST /api/v1/procedures/{id}/completions` -> MongoDB outbox ->
 - **CP4 - metric catalog:** golden signals for clinical, appointments and billing with PromQL, label cardinality and latency buckets ([b210632](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/b210632)).
 - HU-011-005 advanced in the workshop module only; `dlc-clinical-api` still has no `/metrics` or `traceparent`.
 
+### Workshop delivery 2 (2026-10-20) - SLOs, alerts, runbook and incident
+- **CP6 - SLOs and error budget:** availability 99.5 %, latency 95 % under 300 ms and closure convergence 99 % in 5 minutes, over 1,056 completions and 10,560 open minutes per 30 days, with a 50/75/100 % budget policy ([0b40d24](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/0b40d24)).
+- **CP7 - burn-rate alerts:** fast (14.4, 1h/5m) and slow (6, 6h/30m) rules with a minimum of 2 errors for low traffic, and the policy with the budget each alert represents ([7843d51](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/7843d51)).
+- **CP8 - runbook** for `ClinicalProcedureCompletionFastBurn`: confirm by PromQL and `trace_id`, restart / rollback / MongoDB mitigations, escalation and recovery checks ([cf0fb2b](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/cf0fb2b)).
+- **CP9 - incident drill:** MongoDB at 3 s for 25 % of requests for 40 minutes; no alert fired because only availability is alerted, which led to three postmortem stories ([8f5f1c7](https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/8f5f1c7)).
+- HU-011-006 is now written down (SLOs, error-budget policy, alerts, runbook) in the workshop; it is not deployed because there is no Prometheus or Alertmanager in the team stack yet.
+
 ## 3. Blockers and risks
 - **CI not executed:** the organization's GitHub Actions account is locked by billing, so `ci.yml` never starts on PRs #10-#13. Quality is only proven by local runs.
 - **Stacked PRs waiting for review:** #11-#13 build on #10. Nothing reaches `develop` until #10 is approved.
