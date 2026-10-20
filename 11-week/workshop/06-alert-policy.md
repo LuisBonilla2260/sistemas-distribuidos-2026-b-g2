@@ -52,3 +52,10 @@ Check the rules with `promtool` from the official Prometheus image (Docker Deskt
 ```bash
 docker run --rm -v "$PWD":/w --entrypoint promtool prom/prometheus:v2.53.0 check rules /w/06-alerts.yml
 ```
+
+Result on 2026-10-20 (Windows 11, Docker Desktop, `prom/prometheus:v2.53.0`):
+
+```text
+Checking /w/06-alerts.yml
+  SUCCESS: 6 rules found
+```
