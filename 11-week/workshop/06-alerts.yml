@@ -1,0 +1,56 @@
+# CP7 - Burn-rate alerts for SLO 1 (availability 99.5 % in 30 days) of
+# POST /api/v1/procedures/{id}/completions in clinical-service.
+# Error ratio = outcome="error" / all completions (05-slo.md). Budget = 0.005.
+groups:
+  - name: clinical-procedure-completion-slo
+    rules:
+      - record: clinical:procedure_completion_error_ratio:rate5m
+        expr: |
+          sum(rate(clinical_procedure_completions_total{outcome="error"}[5m]))
+          / sum(rate(clinical_procedure_completions_total[5m]))
+      - record: clinical:procedure_completion_error_ratio:rate30m
+        expr: |
+          sum(rate(clinical_procedure_completions_total{outcome="error"}[30m]))
+          / sum(rate(clinical_procedure_completions_total[30m]))
+      - record: clinical:procedure_completion_error_ratio:rate1h
+        expr: |
+          sum(rate(clinical_procedure_completions_total{outcome="error"}[1h]))
+          / sum(rate(clinical_procedure_completions_total[1h]))
+      - record: clinical:procedure_completion_error_ratio:rate6h
+        expr: |
+          sum(rate(clinical_procedure_completions_total{outcome="error"}[6h]))
+          / sum(rate(clinical_procedure_completions_total[6h]))
+
+      # Fast burn: 14.4 x 0.005 = 0.072 over 1h, confirmed over 5m. Spends 2 % of the budget.
+      # With about 6 completions per hour, a single error is already 16 %, so at least
+      # 2 errors in the hour are required before paging.
+      - alert: ClinicalProcedureCompletionFastBurn
+        expr: |
+          clinical:procedure_completion_error_ratio:rate1h > (14.4 * 0.005)
+          and clinical:procedure_completion_error_ratio:rate5m > (14.4 * 0.005)
+          and sum(increase(clinical_procedure_completions_total{outcome="error"}[1h])) >= 2
+        labels:
+          severity: page
+          team: di-lucca-clinical
+          service: clinical-service
+          slo: procedure-completion-availability
+        annotations:
+          summary: "Procedure completions failing fast: {{ $value | humanizePercentage }} errors, 2 % of the 30-day budget gone in 1h"
+          description: "Dentists cannot complete procedures in dlc-clinical-api. Check MongoDB transaction errors and outbox state."
+          runbook_url: "https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/blob/main/11-week/workshop/07-runbook.md"
+
+      # Slow burn: 6 x 0.005 = 0.03 over 6h, confirmed over 30m. Spends 5 % of the budget.
+      - alert: ClinicalProcedureCompletionSlowBurn
+        expr: |
+          clinical:procedure_completion_error_ratio:rate6h > (6 * 0.005)
+          and clinical:procedure_completion_error_ratio:rate30m > (6 * 0.005)
+          and sum(increase(clinical_procedure_completions_total{outcome="error"}[6h])) >= 2
+        labels:
+          severity: ticket
+          team: di-lucca-clinical
+          service: clinical-service
+          slo: procedure-completion-availability
+        annotations:
+          summary: "Procedure completions burning budget slowly: {{ $value | humanizePercentage }} errors over 6h"
+          description: "5 % of the 30-day availability budget of procedure completions is gone. Review failed traces by trace_id today."
+          runbook_url: "https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/blob/main/11-week/workshop/07-runbook.md"
