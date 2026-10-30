@@ -25,17 +25,20 @@
 - Three security stories in the team backlog: #137, #138, #139
 - Security workflow (gitleaks, govulncheck, authz tests) and a negative authorization test for `GET /api/v1/clinical-records/{id}`: `13-week/workshop/04-security-ci/`
 - Review of the Billing STRIDE of @juan0898 (row E, missing `POST /api/v1/manual-charges`): https://github.com/code-corhuila/dlc-docs/pull/132#pullrequestreview-5700321494
+- CP6: answered the review of @juan0898 on PR #133; row E now lists three negative tests (no active assignment, ended assignment, Appointments down) and a Review log was added: https://github.com/code-corhuila/dlc-docs/pull/133#issuecomment-6501351650
+- CP7: refined #137 (six testable criteria, two from the review) and linked #138 with #126 (Auth) and #135 (Billing); the three stories are in the team board "Di Lucca — Backlog"
+- CP8: three negative authorization tests run against `dlc-clinical-api` (develop, 12438c4) and pass: unassigned dentist 404, assistant 403, Appointments down 503; `security.yml` validated with actionlint v1.7.7 (0 errors)
+- CP9: implementation plan written in the reflection document
 
 ## 3. Blockers and risks
 - The assignment check of clinical-service depends on the Appointments internal contract, not validated at runtime yet.
-- The three security issues still need to be added to the team GitHub Project.
 - `security.yml` is a proposal in this fork; it is not in `dlc-clinical-api` yet.
 
 ## 4. Plan for next week
-- Answer the review on PR #133 and finish the STRIDE (CP6).
-- Refine the three security stories (CP7).
-- Run the negative test against clinical-service and validate `security.yml` with actionlint (CP8).
-- Write the implementation plan (CP9).
+- Implement #137 in `dlc-clinical-api`: current assignment check on every request and fail closed when Appointments does not answer.
+- Propose `security.yml` and the negative tests as a pull request to `dlc-clinical-api`.
+- Then #138 (coordinated with #126 and #135) and #139.
+- Defend the workshop in class.
 
 ## 5. Compliance self-check
 - [x] Conventional Commits - `type(scope): summary`
@@ -51,6 +54,10 @@
 - CP1: https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/c548db6
 - CP3: https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/d4c5d58
 - CP4: https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/436a620
+- CP5: https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/7a2d567
+- CP6: https://github.com/code-corhuila/dlc-docs/commit/48486e2
+- CP7: https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/c989ecb
+- CP8: https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/faf16cf
 - STRIDE PR: https://github.com/code-corhuila/dlc-docs/pull/133
 - Review comment: https://github.com/code-corhuila/dlc-docs/pull/132#pullrequestreview-5700321494
 - Reflection: https://docs.google.com/document/d/1n3qOHYYvCyfAkfuE8M9zqQtdTRCtJVat5t9cUdIdxyU/edit?usp=sharing
