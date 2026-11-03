@@ -12,7 +12,7 @@
 | Team | Di-Lucca |
 | Team -docs repository | https://github.com/code-corhuila/dlc-docs |
 | Course | HCCDP-Solution Architectures Course |
-| Course link | <Course URL> |
+| Course link | https://e.huawei.com/en/talent/outPage/#/sxz-course/home?courseId=I4bs1u--tD4kL8Fg3clrbgvqnhA |
 | Start date | <YYYY-MM-DD> |
 | Completion date | <YYYY-MM-DD> |
 
