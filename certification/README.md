@@ -1,4 +1,4 @@
-# Certification C3 — <Full name>
+# Certification C3 — Luis Ignacio Bonilla Delgado
 
 > Template of the corte 3 certification. Replace every `<...>` with your data and delete this note. The rules are in the guide attached to the c3-certification activity in Moodle. Text left as `<...>` counts as missing.
 
@@ -6,12 +6,12 @@
 
 | Field | Value |
 |---|---|
-| Full name | <Full name exactly as in Moodle> |
-| GitHub user | <github-user> |
-| Group | <G1 or G2> |
-| Team | <Team name> |
-| Team -docs repository | <https://github.com/code-corhuila/...-docs> |
-| Course | <Exact course name> |
+| Full name | Luis Ignacio Bonilla Delgado |
+| GitHub user | LuisBonilla2260 |
+| Group | G2 |
+| Team | Di-Lucca |
+| Team -docs repository | https://github.com/code-corhuila/dlc-docs |
+| Course | HCCDP-Solution Architectures Course |
 | Course link | <Course URL> |
 | Start date | <YYYY-MM-DD> |
 | Completion date | <YYYY-MM-DD> |
