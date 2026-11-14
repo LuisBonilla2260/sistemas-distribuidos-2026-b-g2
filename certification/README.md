@@ -13,8 +13,8 @@
 | Team -docs repository | https://github.com/code-corhuila/dlc-docs |
 | Course | HCCDP-Solution Architectures Course |
 | Course link | https://e.huawei.com/en/talent/outPage/#/sxz-course/home?courseId=I4bs1u--tD4kL8Fg3clrbgvqnhA |
-| Start date | <YYYY-MM-DD> |
-| Completion date | <YYYY-MM-DD> |
+| Start date | 2026-11-02 |
+| Completion date | 2026-11-14 |
 
 ## Study log
 
@@ -25,18 +25,19 @@
 
 ## Labs
 
-| Evidence file | Lab name | What I built | What failed first and how I fixed it |
-|---|---|---|---|
-| evidence/15-lab-1.png | <Lab name> | <One sentence> | <One sentence> |
-| evidence/16-lab-2.png | <Lab name> | <One sentence> | <One sentence> |
-| evidence/17-lab-3.png | <Lab name> | <One sentence> | <One sentence> |
-| evidence/18-lab-4.png | <Lab name> | <One sentence> | <One sentence> |
+Labs not completed.
 
 ## Final exam
 
-- Score: <score>
-- Date: <YYYY-MM-DD>
+- Score: 72/100 (passing score 70)
+- Date: 2026-11-14
 - Evidence: evidence/19-final-exam.png
+
+## Certificate
+
+- Certificate code: ICT20261115000030
+- Issue date: 2026-11-15
+- Huawei Talent only offers the course certificate as a PNG download. `certificate.png` is that original file, unchanged. `certificate.pdf` embeds the same image losslessly (same 2480 x 3507 pixels, no resizing or re-compression).
 
 ## Skills summary
 
