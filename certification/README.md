@@ -1,7 +1,5 @@
 # Certification C3 — Luis Ignacio Bonilla Delgado
 
-> Template of the corte 3 certification. Replace every `<...>` with your data and delete this note. The rules are in the guide attached to the c3-certification activity in Moodle. Text left as `<...>` counts as missing.
-
 ## Cover
 
 | Field | Value |
@@ -20,8 +18,13 @@
 
 | Date | Hours | Chapters or labs | Evidence file |
 |---|---|---|---|
-| <YYYY-MM-DD> | <h> | <Chapters or labs> | <evidence/NN-....png> |
-| Total | <sum> | | |
+| 2026-11-02 | 4 | Enrollment, pre-class guidance, chapters 1 to 4 | evidence/00-enrollment.png, evidence/01-chapter-01.png to evidence/04-chapter-04.png |
+| 2026-11-05 | 9 | Review of slides and videos (sections not marked as completed on the platform) | — |
+| 2026-11-09 | 9 | Review of slides and videos (sections not marked as completed on the platform) | — |
+| 2026-11-11 | 10 | Review of slides and videos (sections not marked as completed on the platform) | — |
+| 2026-11-12 | 9 | Review of slides and videos (sections not marked as completed on the platform) | — |
+| 2026-11-14 | 8 | Chapters 5 to 14 completed, final exam | evidence/05-chapter-05.png to evidence/14-chapter-14.png, evidence/19-final-exam.png |
+| Total | 49 | | |
 
 ## Labs
 
@@ -41,4 +44,9 @@ Labs not completed.
 
 ## Skills summary
 
-<5 to 7 lines in English, first person, naming at least three concrete design techniques from the course.>
+I learned to review an architecture against the five principles of the course: reliability, security, performance efficiency, cost and operations.
+I can now place stateless services and their data stores across two availability zones, using primary/standby databases and replica sets so a zone failure becomes a failover instead of a restore.
+I learned to set RTO and RPO in minutes and choose a disaster recovery pattern that can really meet them, from same-region active-standby to backups copied to another location.
+I can define horizontal scaling with a concrete metric, threshold and instance limits, and I understand why the services must be stateless for that to work.
+I also learned how logs, metrics and alarms (LTS, AOM, CES) close the loop between operations and scaling.
+Finally, I can describe an automated deployment as stages from build to rollback, keeping database changes forward-only.
