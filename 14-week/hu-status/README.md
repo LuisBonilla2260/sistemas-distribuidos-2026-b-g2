@@ -78,6 +78,7 @@
 - [x] No secrets; config via environment variables
 
 ## 6. Evidence links
+- [Corte 3 full activity - week 14: every PR, commit, issue and review of LuisBonilla2260, verified](../../C3-ACTIVITY.md#week-14)
 - [Full activity of the week: 91 PRs (85 merged), 97 commits, 43 issues, 2 reviews across the 22 repositories](../ACTIVITY.md)
 - [dlc-infra-mongo #17 - CI pull request workflow](https://github.com/code-corhuila/dlc-infra-mongo/pull/17)
 - [dlc-docs #171 - ADR-020 IAM service-token issuer](https://github.com/code-corhuila/dlc-docs/pull/171)

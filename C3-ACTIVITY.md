@@ -1,12 +1,17 @@
 # Corte 3 - Full activity of LuisBonilla2260 (weeks 11-15)
 
 Organization: [code-corhuila](https://github.com/code-corhuila), the 22 Di Lucca repositories. Period: 2026-10-12 to 2026-11-22.
-Collected with the GitHub CLI on 2026-11-15.
+Collected with the GitHub CLI on 2026-11-15. Verified the same day through the GitHub API:
+- all 510 PRs are authored by `LuisBonilla2260`;
+- all 589 commits have the GitHub login `LuisBonilla2260`;
+- each of the 183 reviewed PRs has at least one review submitted by `LuisBonilla2260` in the period;
+- 14 of the 59 issues were opened by `LuisBonilla2260`, and the account commented on the other 45.
+- 18 of those 45 were opened by @camilo28k but belong to the Clinical service. `LuisBonilla2260` is the Clinical service owner since [dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107), merged 2026-10-15. The GitHub assignee field is empty on these issues, so the ownership comes from that document.
 
 How each item is counted:
 - Pull requests: authored by `LuisBonilla2260`, all base branches, including promotions and releases. Placed in the week the PR was created.
 - Commits: on each repository's default branch. Commits that exist only on other branches are not listed.
-- Issues: issues where the account was involved. Placed in the week they were closed, otherwise the week they were opened.
+- Issues: issues the account opened, commented on, closed or moved on the board. The table shows who opened each issue and what `LuisBonilla2260` did on it. Placed in the week they were closed, otherwise the week they were opened.
 - Reviews: PRs by other authors reviewed by this account. Placed in the week they were last updated.
 - GitHub Actions runs are not listed. Every run in this period was not started because the organization's account is locked by billing.
 
@@ -187,12 +192,12 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#6](https://github.com/code-corhuila/dlc-clinical-portal/issues/6) | closed | Integrate owner portal for HU-XCT-001 |
-| [#5](https://github.com/code-corhuila/dlc-clinical-portal/issues/5) | closed | Integrate owner portal for HU-CLN-003 |
-| [#4](https://github.com/code-corhuila/dlc-clinical-portal/issues/4) | closed | Integrate owner portal for HU-CLN-002 |
-| [#3](https://github.com/code-corhuila/dlc-clinical-portal/issues/3) | closed | Integrate owner portal for HU-CLN-001 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#6](https://github.com/code-corhuila/dlc-clinical-portal/issues/6) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (4), closed, linked from PR/commit | Integrate owner portal for HU-XCT-001 |
+| [#5](https://github.com/code-corhuila/dlc-clinical-portal/issues/5) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (4), closed, linked from PR/commit | Integrate owner portal for HU-CLN-003 |
+| [#4](https://github.com/code-corhuila/dlc-clinical-portal/issues/4) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (3), closed, linked from PR/commit | Integrate owner portal for HU-CLN-002 |
+| [#3](https://github.com/code-corhuila/dlc-clinical-portal/issues/3) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (10), closed, linked from PR/commit | Integrate owner portal for HU-CLN-001 |
 
 ### Week 11 - [dlc-billing-portal](https://github.com/code-corhuila/dlc-billing-portal)
 
@@ -539,10 +544,10 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#43](https://github.com/code-corhuila/dlc-clinical-api/issues/43) | closed | Scope the Dentist clinical-record list through assigned patients |
-| [#42](https://github.com/code-corhuila/dlc-clinical-api/issues/42) | closed | Implement guarded writes and the ADR-017 closing sequence |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#43](https://github.com/code-corhuila/dlc-clinical-api/issues/43) | closed | @LuisBonilla2260 | opened, commented (1), closed, linked from PR/commit | Scope the Dentist clinical-record list through assigned patients |
+| [#42](https://github.com/code-corhuila/dlc-clinical-api/issues/42) | closed | @LuisBonilla2260 | opened, commented (2), closed, linked from PR/commit | Implement guarded writes and the ADR-017 closing sequence |
 
 ### Week 12 - [dlc-clinical-db](https://github.com/code-corhuila/dlc-clinical-db)
 
@@ -593,9 +598,9 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#19](https://github.com/code-corhuila/dlc-clinical-db/issues/19) | closed | Add write-intent and encounter-admission collections (ADR-017) |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#19](https://github.com/code-corhuila/dlc-clinical-db/issues/19) | closed | @LuisBonilla2260 | opened, closed, linked from PR/commit | Add write-intent and encounter-admission collections (ADR-017) |
 
 ### Week 12 - [dlc-clinical-portal](https://github.com/code-corhuila/dlc-clinical-portal)
 
@@ -642,9 +647,9 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#5](https://github.com/code-corhuila/dlc-billing-api/issues/5) | open | Implement manual-charge admissions and encounter freeze/release (ADR-017) |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#5](https://github.com/code-corhuila/dlc-billing-api/issues/5) | open | @LuisBonilla2260 | opened, commented (1), linked from PR/commit | Implement manual-charge admissions and encounter freeze/release (ADR-017) |
 
 ### Week 12 - [dlc-billing-portal](https://github.com/code-corhuila/dlc-billing-portal)
 
@@ -767,12 +772,12 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#139](https://github.com/code-corhuila/dlc-docs/issues/139) | open | [security] Clinical entries keep server-set author, time and original text |
-| [#138](https://github.com/code-corhuila/dlc-docs/issues/138) | open | [security] clinical-service accepts only a verified JWT, never identity headers |
-| [#137](https://github.com/code-corhuila/dlc-docs/issues/137) | open | [security] Only the assigned dentist can read or complete a clinical record |
-| [#130](https://github.com/code-corhuila/dlc-docs/issues/130) | open | Threat model: api-gateway -> clinical-service (inbound) — @LuisBonilla2260 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#139](https://github.com/code-corhuila/dlc-docs/issues/139) | open | @LuisBonilla2260 | opened, moved on board | [security] Clinical entries keep server-set author, time and original text |
+| [#138](https://github.com/code-corhuila/dlc-docs/issues/138) | open | @LuisBonilla2260 | opened, moved on board | [security] clinical-service accepts only a verified JWT, never identity headers |
+| [#137](https://github.com/code-corhuila/dlc-docs/issues/137) | open | @LuisBonilla2260 | opened, moved on board, linked from PR/commit | [security] Only the assigned dentist can read or complete a clinical record |
+| [#130](https://github.com/code-corhuila/dlc-docs/issues/130) | open | @LuisBonilla2260 | opened, linked from PR/commit | Threat model: api-gateway -> clinical-service (inbound) — @LuisBonilla2260 |
 
 **Reviews of other authors' PRs**
 
@@ -926,9 +931,9 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#1](https://github.com/code-corhuila/dlc-api-gateway/issues/1) | closed | Integrate supporting capability for HU-IAM-001 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#1](https://github.com/code-corhuila/dlc-api-gateway/issues/1) | closed | @camilo28k | commented (3), closed, linked from PR/commit | Integrate supporting capability for HU-IAM-001 |
 
 ### Week 13 - [dlc-worker](https://github.com/code-corhuila/dlc-worker)
 
@@ -1183,10 +1188,10 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#17](https://github.com/code-corhuila/dlc-appointments-api/issues/17) | closed | Implement patient guard recovery and FINALIZED resolution (ADR-017) |
-| [#16](https://github.com/code-corhuila/dlc-appointments-api/issues/16) | closed | Provide internal reads for Dentist scope and care completion |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#17](https://github.com/code-corhuila/dlc-appointments-api/issues/17) | closed | @LuisBonilla2260 | opened, linked from PR/commit | Implement patient guard recovery and FINALIZED resolution (ADR-017) |
+| [#16](https://github.com/code-corhuila/dlc-appointments-api/issues/16) | closed | @LuisBonilla2260 | opened, linked from PR/commit | Provide internal reads for Dentist scope and care completion |
 
 **Reviews of other authors' PRs**
 
@@ -1660,23 +1665,23 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#178](https://github.com/code-corhuila/dlc-docs/issues/178) | closed | HU-APT-006 — Appointment types and calendar legend |
-| [#177](https://github.com/code-corhuila/dlc-docs/issues/177) | closed | HU-APT-005 — Waiting list |
-| [#69](https://github.com/code-corhuila/dlc-docs/issues/69) | closed | HU-20 — Ongoing clinical assignments (HU-APT-004) |
-| [#67](https://github.com/code-corhuila/dlc-docs/issues/67) | closed | HU-17 — Safe clinical-to-financial closure (HU-XCT-001) |
-| [#66](https://github.com/code-corhuila/dlc-docs/issues/66) | closed | HU-21 — Justified care-time prices (HU-BIL-004) |
-| [#65](https://github.com/code-corhuila/dlc-docs/issues/65) | closed | HU-19 — Internal payment recording (HU-BIL-003) |
-| [#64](https://github.com/code-corhuila/dlc-docs/issues/64) | closed | HU-18 — Invoice review and issuance (HU-BIL-002) |
-| [#63](https://github.com/code-corhuila/dlc-docs/issues/63) | closed | HU-15 — Versioned base-price catalog (HU-BIL-001) |
-| [#62](https://github.com/code-corhuila/dlc-docs/issues/62) | open | HU-23 — Clinical Analytics dashboard (HU-CLN-003) |
-| [#61](https://github.com/code-corhuila/dlc-docs/issues/61) | closed | HU-16 — Clinical materials and unforeseen needs (HU-CLN-002) |
-| [#57](https://github.com/code-corhuila/dlc-docs/issues/57) | closed | HU-14 — Longitudinal clinical care (HU-CLN-001) |
-| [#56](https://github.com/code-corhuila/dlc-docs/issues/56) | closed | HU-13 — Dentist calendar (HU-APT-003) |
-| [#55](https://github.com/code-corhuila/dlc-docs/issues/55) | closed | HU-12 — Appointment confirmation and lifecycle (HU-APT-002) |
-| [#54](https://github.com/code-corhuila/dlc-docs/issues/54) | closed | HU-11 — Conflict-free appointment scheduling (HU-APT-001) |
-| [#53](https://github.com/code-corhuila/dlc-docs/issues/53) | closed | HU-10 — Patient administration (HU-PAT-001) |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#178](https://github.com/code-corhuila/dlc-docs/issues/178) | closed | @LuisBonilla2260 | opened, commented (1), closed, moved on board | HU-APT-006 — Appointment types and calendar legend |
+| [#177](https://github.com/code-corhuila/dlc-docs/issues/177) | closed | @LuisBonilla2260 | opened, commented (1), closed, moved on board | HU-APT-005 — Waiting list |
+| [#69](https://github.com/code-corhuila/dlc-docs/issues/69) | closed | @camilo28k | commented (1), closed, moved on board, linked from PR/commit | HU-20 — Ongoing clinical assignments (HU-APT-004) |
+| [#67](https://github.com/code-corhuila/dlc-docs/issues/67) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), closed, moved on board, linked from PR/commit | HU-17 — Safe clinical-to-financial closure (HU-XCT-001) |
+| [#66](https://github.com/code-corhuila/dlc-docs/issues/66) | closed | @camilo28k | commented (1), closed, moved on board | HU-21 — Justified care-time prices (HU-BIL-004) |
+| [#65](https://github.com/code-corhuila/dlc-docs/issues/65) | closed | @camilo28k | commented (1), closed, moved on board, linked from PR/commit | HU-19 — Internal payment recording (HU-BIL-003) |
+| [#64](https://github.com/code-corhuila/dlc-docs/issues/64) | closed | @camilo28k | commented (1), closed, moved on board, linked from PR/commit | HU-18 — Invoice review and issuance (HU-BIL-002) |
+| [#63](https://github.com/code-corhuila/dlc-docs/issues/63) | closed | @camilo28k | commented (1), closed, moved on board | HU-15 — Versioned base-price catalog (HU-BIL-001) |
+| [#62](https://github.com/code-corhuila/dlc-docs/issues/62) | open | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), linked from PR/commit | HU-23 — Clinical Analytics dashboard (HU-CLN-003) |
+| [#61](https://github.com/code-corhuila/dlc-docs/issues/61) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), closed, moved on board, linked from PR/commit | HU-16 — Clinical materials and unforeseen needs (HU-CLN-002) |
+| [#57](https://github.com/code-corhuila/dlc-docs/issues/57) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), closed, moved on board, linked from PR/commit | HU-14 — Longitudinal clinical care (HU-CLN-001) |
+| [#56](https://github.com/code-corhuila/dlc-docs/issues/56) | closed | @camilo28k | commented (1), closed, moved on board, linked from PR/commit | HU-13 — Dentist calendar (HU-APT-003) |
+| [#55](https://github.com/code-corhuila/dlc-docs/issues/55) | closed | @camilo28k | commented (1), closed, moved on board, linked from PR/commit | HU-12 — Appointment confirmation and lifecycle (HU-APT-002) |
+| [#54](https://github.com/code-corhuila/dlc-docs/issues/54) | closed | @camilo28k | commented (1), closed, moved on board, linked from PR/commit | HU-11 — Conflict-free appointment scheduling (HU-APT-001) |
+| [#53](https://github.com/code-corhuila/dlc-docs/issues/53) | closed | @camilo28k | commented (1) | HU-10 — Patient administration (HU-PAT-001) |
 
 ### Week 14 - [dlc-front](https://github.com/code-corhuila/dlc-front)
 
@@ -1704,9 +1709,9 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#1](https://github.com/code-corhuila/dlc-front/issues/1) | closed | Integrate supporting capability for HU-IAM-001 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#1](https://github.com/code-corhuila/dlc-front/issues/1) | closed | @camilo28k | commented (1), closed, linked from PR/commit | Integrate supporting capability for HU-IAM-001 |
 
 ### Week 14 - [dlc-api-gateway](https://github.com/code-corhuila/dlc-api-gateway)
 
@@ -1756,11 +1761,11 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#3](https://github.com/code-corhuila/dlc-worker/issues/3) | closed | Integrate supporting capability for HU-BIL-003 |
-| [#2](https://github.com/code-corhuila/dlc-worker/issues/2) | closed | Integrate supporting capability for HU-BIL-002 |
-| [#1](https://github.com/code-corhuila/dlc-worker/issues/1) | closed | Integrate supporting capability for HU-APT-002 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#3](https://github.com/code-corhuila/dlc-worker/issues/3) | closed | @camilo28k | commented (1), closed, linked from PR/commit | Integrate supporting capability for HU-BIL-003 |
+| [#2](https://github.com/code-corhuila/dlc-worker/issues/2) | closed | @camilo28k | commented (1), closed, linked from PR/commit | Integrate supporting capability for HU-BIL-002 |
+| [#1](https://github.com/code-corhuila/dlc-worker/issues/1) | closed | @camilo28k | commented (2), closed, linked from PR/commit | Integrate supporting capability for HU-APT-002 |
 
 ### Week 14 - [dlc-iam-api](https://github.com/code-corhuila/dlc-iam-api)
 
@@ -1817,11 +1822,11 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#3](https://github.com/code-corhuila/dlc-patient-api/issues/3) | closed | Add intent-first deactivation guard and recovery (ADR-017) |
-| [#2](https://github.com/code-corhuila/dlc-patient-api/issues/2) | closed | Integrate supporting capability for HU-PAT-001 |
-| [#1](https://github.com/code-corhuila/dlc-patient-api/issues/1) | closed | Implement owner API and use case for HU-PAT-001 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#3](https://github.com/code-corhuila/dlc-patient-api/issues/3) | closed | @LuisBonilla2260 | opened, commented (2), closed | Add intent-first deactivation guard and recovery (ADR-017) |
+| [#2](https://github.com/code-corhuila/dlc-patient-api/issues/2) | closed | @camilo28k | commented (1), closed | Integrate supporting capability for HU-PAT-001 |
+| [#1](https://github.com/code-corhuila/dlc-patient-api/issues/1) | closed | @camilo28k | commented (1), closed, linked from PR/commit | Implement owner API and use case for HU-PAT-001 |
 
 ### Week 14 - [dlc-patient-db](https://github.com/code-corhuila/dlc-patient-db)
 
@@ -1842,9 +1847,9 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#1](https://github.com/code-corhuila/dlc-patient-db/issues/1) | closed | Prepare owned persistence for HU-PAT-001 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#1](https://github.com/code-corhuila/dlc-patient-db/issues/1) | closed | @camilo28k | commented (1), closed | Prepare owned persistence for HU-PAT-001 |
 
 ### Week 14 - [dlc-patient-portal](https://github.com/code-corhuila/dlc-patient-portal)
 
@@ -1865,9 +1870,9 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#1](https://github.com/code-corhuila/dlc-patient-portal/issues/1) | closed | Integrate owner portal for HU-PAT-001 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#1](https://github.com/code-corhuila/dlc-patient-portal/issues/1) | closed | @camilo28k | commented (1), closed | Integrate owner portal for HU-PAT-001 |
 
 ### Week 14 - [dlc-appointments-api](https://github.com/code-corhuila/dlc-appointments-api)
 
@@ -1893,12 +1898,12 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#6](https://github.com/code-corhuila/dlc-appointments-api/issues/6) | closed | Implement owner API and use case for HU-APT-004 |
-| [#5](https://github.com/code-corhuila/dlc-appointments-api/issues/5) | closed | Implement owner API and use case for HU-APT-003 |
-| [#4](https://github.com/code-corhuila/dlc-appointments-api/issues/4) | closed | Implement owner API and use case for HU-APT-002 |
-| [#3](https://github.com/code-corhuila/dlc-appointments-api/issues/3) | closed | Implement owner API and use case for HU-APT-001 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#6](https://github.com/code-corhuila/dlc-appointments-api/issues/6) | closed | @camilo28k | commented (1), closed, linked from PR/commit | Implement owner API and use case for HU-APT-004 |
+| [#5](https://github.com/code-corhuila/dlc-appointments-api/issues/5) | closed | @camilo28k | commented (1), closed, linked from PR/commit | Implement owner API and use case for HU-APT-003 |
+| [#4](https://github.com/code-corhuila/dlc-appointments-api/issues/4) | closed | @camilo28k | commented (1), closed, linked from PR/commit | Implement owner API and use case for HU-APT-002 |
+| [#3](https://github.com/code-corhuila/dlc-appointments-api/issues/3) | closed | @camilo28k | commented (1), closed, linked from PR/commit | Implement owner API and use case for HU-APT-001 |
 
 ### Week 14 - [dlc-appointments-db](https://github.com/code-corhuila/dlc-appointments-db)
 
@@ -1920,12 +1925,12 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#7](https://github.com/code-corhuila/dlc-appointments-db/issues/7) | closed | Prepare owned persistence for HU-APT-004 |
-| [#6](https://github.com/code-corhuila/dlc-appointments-db/issues/6) | closed | Prepare owned persistence for HU-APT-003 |
-| [#5](https://github.com/code-corhuila/dlc-appointments-db/issues/5) | closed | Prepare owned persistence for HU-APT-002 |
-| [#4](https://github.com/code-corhuila/dlc-appointments-db/issues/4) | closed | Prepare owned persistence for HU-APT-001 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#7](https://github.com/code-corhuila/dlc-appointments-db/issues/7) | closed | @camilo28k | commented (1), closed, linked from PR/commit | Prepare owned persistence for HU-APT-004 |
+| [#6](https://github.com/code-corhuila/dlc-appointments-db/issues/6) | closed | @camilo28k | commented (1), closed, linked from PR/commit | Prepare owned persistence for HU-APT-003 |
+| [#5](https://github.com/code-corhuila/dlc-appointments-db/issues/5) | closed | @camilo28k | commented (1), closed, linked from PR/commit | Prepare owned persistence for HU-APT-002 |
+| [#4](https://github.com/code-corhuila/dlc-appointments-db/issues/4) | closed | @camilo28k | commented (1), closed, linked from PR/commit | Prepare owned persistence for HU-APT-001 |
 
 ### Week 14 - [dlc-appointments-portal](https://github.com/code-corhuila/dlc-appointments-portal)
 
@@ -1973,11 +1978,11 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#6](https://github.com/code-corhuila/dlc-clinical-api/issues/6) | closed | Implement owner API and use case for HU-XCT-001 |
-| [#4](https://github.com/code-corhuila/dlc-clinical-api/issues/4) | closed | Implement owner API and use case for HU-CLN-002 |
-| [#3](https://github.com/code-corhuila/dlc-clinical-api/issues/3) | closed | Implement owner API and use case for HU-CLN-001 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#6](https://github.com/code-corhuila/dlc-clinical-api/issues/6) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), closed, linked from PR/commit | Implement owner API and use case for HU-XCT-001 |
+| [#4](https://github.com/code-corhuila/dlc-clinical-api/issues/4) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), closed, linked from PR/commit | Implement owner API and use case for HU-CLN-002 |
+| [#3](https://github.com/code-corhuila/dlc-clinical-api/issues/3) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), closed, linked from PR/commit | Implement owner API and use case for HU-CLN-001 |
 
 ### Week 14 - [dlc-clinical-db](https://github.com/code-corhuila/dlc-clinical-db)
 
@@ -1999,11 +2004,11 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#8](https://github.com/code-corhuila/dlc-clinical-db/issues/8) | closed | Prepare owned persistence for HU-XCT-001 |
-| [#6](https://github.com/code-corhuila/dlc-clinical-db/issues/6) | closed | Prepare owned persistence for HU-CLN-002 |
-| [#5](https://github.com/code-corhuila/dlc-clinical-db/issues/5) | closed | Prepare owned persistence for HU-CLN-001 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#8](https://github.com/code-corhuila/dlc-clinical-db/issues/8) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), closed, linked from PR/commit | Prepare owned persistence for HU-XCT-001 |
+| [#6](https://github.com/code-corhuila/dlc-clinical-db/issues/6) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), closed, linked from PR/commit | Prepare owned persistence for HU-CLN-002 |
+| [#5](https://github.com/code-corhuila/dlc-clinical-db/issues/5) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), closed, linked from PR/commit | Prepare owned persistence for HU-CLN-001 |
 
 ### Week 14 - [dlc-clinical-portal](https://github.com/code-corhuila/dlc-clinical-portal)
 
@@ -2029,9 +2034,9 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#111](https://github.com/code-corhuila/dlc-clinical-portal/issues/111) | closed | Align procedure completion and care closure with ADR-014 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#111](https://github.com/code-corhuila/dlc-clinical-portal/issues/111) | closed | @LuisBonilla2260 | opened, commented (1), closed | Align procedure completion and care closure with ADR-014 |
 
 ### Week 14 - [dlc-billing-api](https://github.com/code-corhuila/dlc-billing-api)
 
@@ -2143,9 +2148,9 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#1](https://github.com/code-corhuila/dlc-infra-postgres/issues/1) | closed | Integrate supporting capability for HU-IAM-001 |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#1](https://github.com/code-corhuila/dlc-infra-postgres/issues/1) | closed | @camilo28k | commented (1), closed | Integrate supporting capability for HU-IAM-001 |
 
 ### Week 14 - [dlc-infra-mongo](https://github.com/code-corhuila/dlc-infra-mongo)
 
@@ -2171,12 +2176,12 @@ How each item is counted:
 
 **Issues**
 
-| Issue | State | Title |
-|---|---|---|
-| [#4](https://github.com/code-corhuila/dlc-infra-mongo/issues/4) | closed | Secure Clinical MongoDB authentication, transport and storage |
-| [#3](https://github.com/code-corhuila/dlc-infra-mongo/issues/3) | closed | Verify Clinical MongoDB backup, restore and failure isolation |
-| [#2](https://github.com/code-corhuila/dlc-infra-mongo/issues/2) | closed | Establish owner-scoped MongoDB access and migration handoff |
-| [#1](https://github.com/code-corhuila/dlc-infra-mongo/issues/1) | closed | Provision independent Clinical MongoDB 8.0 replica set |
+| Issue | State | Opened by | Role of LuisBonilla2260 | Title |
+|---|---|---|---|---|
+| [#4](https://github.com/code-corhuila/dlc-infra-mongo/issues/4) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), closed, linked from PR/commit | Secure Clinical MongoDB authentication, transport and storage |
+| [#3](https://github.com/code-corhuila/dlc-infra-mongo/issues/3) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), closed, linked from PR/commit | Verify Clinical MongoDB backup, restore and failure isolation |
+| [#2](https://github.com/code-corhuila/dlc-infra-mongo/issues/2) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), closed, linked from PR/commit | Establish owner-scoped MongoDB access and migration handoff |
+| [#1](https://github.com/code-corhuila/dlc-infra-mongo/issues/1) | closed | @camilo28k | responsible as Clinical service owner ([dlc-docs #107](https://github.com/code-corhuila/dlc-docs/pull/107)), commented (1), closed, linked from PR/commit | Provision independent Clinical MongoDB 8.0 replica set |
 
 
 ## Week 15

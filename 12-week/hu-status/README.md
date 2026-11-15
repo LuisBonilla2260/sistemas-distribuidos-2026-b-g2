@@ -60,6 +60,7 @@
 - [ ] No secrets; config via environment variables
 
 ## 6. Evidence links
+- [Corte 3 full activity - week 12: every PR, commit, issue and review of LuisBonilla2260, verified](../../C3-ACTIVITY.md#week-12)
 - [dlc-docs #67 - HU-XCT-001 safe clinical-to-financial closure](https://github.com/code-corhuila/dlc-docs/issues/67)
 - [dlc-docs #117 - register dlc-infra-mongo and the MongoDB recovery runbook](https://github.com/code-corhuila/dlc-docs/issues/117)
 - [dlc-clinical-portal #111 - align procedure completion and care closure with ADR-014](https://github.com/code-corhuila/dlc-clinical-portal/issues/111)

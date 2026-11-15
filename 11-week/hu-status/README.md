@@ -79,6 +79,7 @@ Critical journey `POST /api/v1/procedures/{id}/completions` -> MongoDB outbox ->
 - [x] No secrets; config via environment variables
 
 ## 6. Evidence links
+- [Corte 3 full activity - week 11: every PR, commit, issue and review of LuisBonilla2260, verified](../../C3-ACTIVITY.md#week-11)
 - [dlc-clinical-api PR #10 - bootstrap go service skeleton](https://github.com/code-corhuila/dlc-clinical-api/pull/10)
 - [dlc-clinical-api PR #11 - error envelope and correlation](https://github.com/code-corhuila/dlc-clinical-api/pull/11)
 - [dlc-clinical-api PR #12 - verify RS256 tokens in the service](https://github.com/code-corhuila/dlc-clinical-api/pull/12)

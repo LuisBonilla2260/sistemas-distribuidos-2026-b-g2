@@ -101,6 +101,7 @@ Already merged in `dlc-clinical-api`:
 - [x] No secrets; config via environment variables
 
 ## 6. Evidence links
+- [Corte 3 full activity - week 13: every PR, commit, issue and review of LuisBonilla2260, verified](../../C3-ACTIVITY.md#week-13)
 - Workshop folder: https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/tree/main/13-week/workshop
 - CP0: https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/b5dfcba
 - CP1: https://github.com/LuisBonilla2260/sistemas-distribuidos-2026-b-g2/commit/c548db6
