@@ -16,13 +16,13 @@
 |---|---|---|---|
 | HU-012-001 | CI builds and pushes one versioned image of `dlc-clinical-api` to `ghcr.io` on merge (`sha-<commit>`, and `vX.Y.Z` on release tags) - DEP-1 | todo | [session 2 plan](../02-session/README.md) |
 | HU-012-002 | Deploy Clinical from images, not builds: `image:` + `CLINICAL_API_TAG` in `deploy/compose.yml`, same digest promoted develop -> qa -> main - DEP-2 | todo | [session 1 audit](../01-session/README.md) |
-| HU-012-003 | Provision the Clinical MongoDB 8.0 replica set as IaC in `dlc-infra-mongo` with owner-scoped access, so transactions (procedure + `outbox_events`) run in every environment - DEP-3 | todo | [dlc-infra-mongo #1](https://github.com/code-corhuila/dlc-infra-mongo/issues/1), [#2](https://github.com/code-corhuila/dlc-infra-mongo/issues/2) |
+| HU-012-003 | Provision the Clinical MongoDB 8.0 replica set as IaC in `dlc-infra-mongo` with owner-scoped access, so transactions (procedure + `outbox_events`) run in every environment - DEP-3 | done | [dlc-infra-mongo #1](https://github.com/code-corhuila/dlc-infra-mongo/issues/1), [#2](https://github.com/code-corhuila/dlc-infra-mongo/issues/2) |
 | HU-012-004 | Blue-green release of `clinical-api` with 3 healthy checks before the switch and 0 failed completions during it - DEP-4 | todo | [session 2 plan](../02-session/README.md) |
 | HU-012-005 | Rehearse and time the clinical rollback in qa (under 5 minutes, verified with the week 11 SLIs) - DEP-5 | todo | [session 2 plan](../02-session/README.md) |
-| HU-012-006 | Align the clinical portal with the ADR-014 encounter closure: `ProcedureCompletion` model, one `CareClosure` from `care-completions`, `AWAITING_ADMINISTRATIVE_FINALIZATION` as a normal state | todo | [dlc-clinical-portal #111](https://github.com/code-corhuila/dlc-clinical-portal/issues/111) |
-| HU-012-007 | Close HU-XCT-001 with acceptance evidence across `dlc-clinical-api` and `dlc-clinical-db` (idempotent procedure facts, Dentist declaration, outcomes from RabbitMQ) | todo | [dlc-docs #67](https://github.com/code-corhuila/dlc-docs/issues/67), [api #6](https://github.com/code-corhuila/dlc-clinical-api/issues/6), [db #8](https://github.com/code-corhuila/dlc-clinical-db/issues/8) |
+| HU-012-006 | Align the clinical portal with the ADR-014 encounter closure: `ProcedureCompletion` model, one `CareClosure` from `care-completions`, `AWAITING_ADMINISTRATIVE_FINALIZATION` as a normal state | done | [dlc-clinical-portal #111](https://github.com/code-corhuila/dlc-clinical-portal/issues/111) |
+| HU-012-007 | Close HU-XCT-001 with acceptance evidence across `dlc-clinical-api` and `dlc-clinical-db` (idempotent procedure facts, Dentist declaration, outcomes from RabbitMQ) | done | [dlc-docs #67](https://github.com/code-corhuila/dlc-docs/issues/67), [api #6](https://github.com/code-corhuila/dlc-clinical-api/issues/6), [db #8](https://github.com/code-corhuila/dlc-clinical-db/issues/8) |
 | HU-012-008 | Observability in `dlc-clinical-api`: CP2 snake_case log contract, W3C `traceparent` stored in `outbox_events` and copied to AMQP headers by the relay, and `/metrics` with the completion counter and latency histogram (carries over HU-011-005) | todo | [workshop CP2-CP4](../../11-week/workshop/README.md) |
-| HU-012-009 | Latency burn-rate alert `ClinicalProcedureCompletionLatencyBurn` with `promtool test rules`, and the MongoDB backup/restore runbook registered in `dlc-docs` (carries over HU-011-006) | todo | [dlc-docs #117](https://github.com/code-corhuila/dlc-docs/issues/117), [dlc-infra-mongo #3](https://github.com/code-corhuila/dlc-infra-mongo/issues/3) |
+| HU-012-009 | Latency burn-rate alert `ClinicalProcedureCompletionLatencyBurn` with `promtool test rules`, and the MongoDB backup/restore runbook registered in `dlc-docs` (carries over HU-011-006) | doing | [dlc-docs #117](https://github.com/code-corhuila/dlc-docs/issues/117), [dlc-infra-mongo #3](https://github.com/code-corhuila/dlc-infra-mongo/issues/3), [dlc-infra-mongo CI backup/restore check #17](https://github.com/code-corhuila/dlc-infra-mongo/pull/17) |
 
 ## 2. My individual contribution
 - Applied session 1 (deployment models, build once, zero downtime, scaling) to Clinical in [01-session](../01-session/README.md) and wrote the MVP 3 deployment plan (promotion, IaC, blue-green, timed rollback, DEP-1..DEP-5) in [02-session](../02-session/README.md).
@@ -38,6 +38,12 @@
 - **Portal and API out of sync:** until #111 is fixed, the Dentist sees a closure per procedure while the API creates one per encounter.
 - **No Prometheus or Alertmanager in the stack:** HU-012-009 can be validated with `promtool` in Docker but not deployed.
 - **Low traffic:** about 6 completions per hour; one failure is a large share of the error budget (week 11 workshop CP6).
+
+- **Update 2026-11-15:**
+  - Clinical MongoDB replica set provisioned with owner-scoped access, and backup/restore verified ([dlc-infra-mongo #1](https://github.com/code-corhuila/dlc-infra-mongo/issues/1), [#2](https://github.com/code-corhuila/dlc-infra-mongo/issues/2), [#3](https://github.com/code-corhuila/dlc-infra-mongo/issues/3)).
+  - Portal aligned with ADR-014 ([dlc-clinical-portal #111](https://github.com/code-corhuila/dlc-clinical-portal/issues/111)).
+  - HU-XCT-001 closed ([dlc-docs #67](https://github.com/code-corhuila/dlc-docs/issues/67)).
+  - Still open: image publishing, deploy by image, blue-green, rollback rehearsal, `/metrics` and `traceparent`, the burn-rate alert, and the runbook registration ([dlc-docs #117](https://github.com/code-corhuila/dlc-docs/issues/117)).
 
 ## 4. Plan for next week
 - Fill the rollback rehearsal table with real times from qa.

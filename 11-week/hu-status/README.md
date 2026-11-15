@@ -14,10 +14,10 @@
 ## 1. User stories worked this week
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
-| HU-011-001 | Bootstrap the clinical-api Go service: validated config, public `/health`, distroless image, compose on the `platform` network, CI workflow | doing | [dlc-clinical-api PR #10](https://github.com/code-corhuila/dlc-clinical-api/pull/10) |
-| HU-011-002 | Structured JSON logs with a propagated `X-Correlation-Id` used as `traceId`, plus a single error envelope | doing | [dlc-clinical-api PR #11](https://github.com/code-corhuila/dlc-clinical-api/pull/11) |
-| HU-011-003 | Verify RS256 JWTs inside the clinical service (issuer/audience allowlists, `401` with envelope and `traceId`) | doing | [dlc-clinical-api PR #12](https://github.com/code-corhuila/dlc-clinical-api/pull/12) |
-| HU-011-004 | Clinical domain model (record, append-only entries and amendments, treatments) with an enforced dependency rule | doing | [dlc-clinical-api PR #13](https://github.com/code-corhuila/dlc-clinical-api/pull/13) |
+| HU-011-001 | Bootstrap the clinical-api Go service: validated config, public `/health`, distroless image, compose on the `platform` network, CI workflow | done | [dlc-clinical-api PR #10](https://github.com/code-corhuila/dlc-clinical-api/pull/10) |
+| HU-011-002 | Structured JSON logs with a propagated `X-Correlation-Id` used as `traceId`, plus a single error envelope | done | [dlc-clinical-api PR #11](https://github.com/code-corhuila/dlc-clinical-api/pull/11) |
+| HU-011-003 | Verify RS256 JWTs inside the clinical service (issuer/audience allowlists, `401` with envelope and `traceId`) | done | [dlc-clinical-api PR #12](https://github.com/code-corhuila/dlc-clinical-api/pull/12) |
+| HU-011-004 | Clinical domain model (record, append-only entries and amendments, treatments) with an enforced dependency rule | done | [dlc-clinical-api PR #13](https://github.com/code-corhuila/dlc-clinical-api/pull/13) |
 | HU-011-005 | Golden-signal metrics (rate, errors, latency) and one distributed trace across a multi-service request | todo | - |
 | HU-011-006 | Clinical service SLOs, error-budget policy, a symptom-based alert and one runbook | todo | - |
 
@@ -61,6 +61,8 @@ Critical journey `POST /api/v1/procedures/{id}/completions` -> MongoDB outbox ->
 - **Stacked PRs waiting for review:** #11-#13 build on #10. Nothing reaches `develop` until #10 is approved.
 - **No metrics or traces yet:** only logs plus correlation exist. There is no metrics endpoint and no OpenTelemetry tracing, so the golden signals cannot be shown on a dashboard and no cross-service trace exists.
 - **No business endpoints:** no `clinical-service.yaml` operation is implemented yet, so there is no real multi-service request to trace. Persistence still depends on `dlc-infra-mongo` plus the `dlc-clinical-db` v2.0.0 schema.
+
+- **Update 2026-11-15:** [#10](https://github.com/code-corhuila/dlc-clinical-api/pull/10)-[#13](https://github.com/code-corhuila/dlc-clinical-api/pull/13) were merged, so HU-011-001 to HU-011-004 are done. Metrics, traces and SLOs (HU-011-005/006) moved to week 12 as HU-012-008/009.
 
 ## 4. Plan for next week
 - Get #10-#13 merged into `develop` and promote them to `qa`.
