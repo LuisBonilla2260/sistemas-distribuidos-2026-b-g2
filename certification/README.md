@@ -23,8 +23,8 @@
 | 2026-11-09 | 9 | Review of slides and videos (sections not marked as completed on the platform) | — |
 | 2026-11-11 | 10 | Review of slides and videos (sections not marked as completed on the platform) | — |
 | 2026-11-12 | 9 | Review of slides and videos (sections not marked as completed on the platform) | — |
-| 2026-11-14 | 8 | Chapters 5 to 14 completed, final exam | evidence/05-chapter-05.png to evidence/14-chapter-14.png, evidence/19-final-exam.png |
-| Total | 49 | | |
+| 2026-11-14 | 9 | Chapters 5 to 14 completed, final exam | evidence/05-chapter-05.png to evidence/14-chapter-14.png, evidence/19-final-exam.png |
+| Total | 50 | | |
 
 ## Labs
 
